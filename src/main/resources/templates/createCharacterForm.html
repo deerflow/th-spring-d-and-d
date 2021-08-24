@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:object="${character}" method="post">
+        <div>
+            <label for="id">Id</label>
+            <input type="text" th:field="*{id}" id="id" />
+        </div>
+
+        <div>
+            <label for="name">Name</label>
+            <input type="text" th:field="*{name}" id="name" />
+        </div>
+
+        <div>
+            <label for="type">Type</label>
+            <select id="type" th:field="*{type}">
+                <option th:each="type : ${T(com.deerflow.thspringdandd.characters.CharacterType).values()}"
+                        th:value="${type}" th:text="${type}"></option>
+            </select>
+        </div>
+
+        <div>
+            <label for="life_points">Life points</label>
+            <input type="number" th:field="*{lifePoints}" id="life_points" />
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
