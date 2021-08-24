@@ -8,5 +8,8 @@
 <h1 th:text="${character.getName()}"></h1>
 <h2 th:text="${character.getType()}"></h2>
 <h3 th:text="${character.getLifePoints()}">HP</h3>
+<form th:method="delete" th:action="@{/characters/delete/{id}(id=${character.getId()})}">
+    <button type="submit">Delete</button>
+</form>
 </body>
 </html>

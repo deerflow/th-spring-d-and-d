@@ -10,7 +10,7 @@ public class Character {
     }
 
     Character(String name, CharacterType type, int lifePoints) {
-        this.id = Characters.list.size() + 1;
+        this.id = Characters.findAll().size() + 1;
         this.name = name;
         this.type = type;
         this.lifePoints = lifePoints;
@@ -27,7 +27,9 @@ public class Character {
         return id;
     }
 
-    public void setId(Integer id) { this.id = id; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

@@ -5,10 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-    <ul>
-        <li th:each="character : ${characters}">
-            <a th:text="${character.getName()}" th:href="@{/characters/{id}(id=${character.getId()})}"></a>
-        </li>
-    </ul>
+<ul>
+    <li th:each="character : ${characters}">
+        <a th:text="${character.getName()}" th:href="@{/characters/{id}(id=${character.getId()})}"></a>
+    </li>
+</ul>
+<a href="/characters/new">
+    <button>New</button>
+</a>
 </body>
 </html>
