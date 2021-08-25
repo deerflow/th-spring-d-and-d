@@ -31,6 +31,18 @@ public class CharacterController {
         return new RedirectView("/characters");
     }
 
+    @GetMapping("/characters/edit/{id}")
+    public String editCharacterForm(@PathVariable(value = "id") int id, Model model) {
+        model.addAttribute("character", Characters.findById(id));
+        return "editCharacterForm";
+    }
+
+    @PutMapping("/characters/edit/{id}")
+    public RedirectView editCharacter(@ModelAttribute Character character, @PathVariable(value = "id") int id) {
+        Characters.editOne(id, character);
+        return new RedirectView("/characters/" + character.getId());
+    }
+
     @GetMapping("/characters/{id}")
     public String getCharacterById(Model model, @PathVariable(value = "id") int id) {
         model.addAttribute("character", Characters.findById(id));

@@ -32,9 +32,9 @@ public class Characters {
         return Characters.list.removeIf(character -> character.getId() == id);
     }
 
-    public static boolean editOne(Character character) {
+    public static boolean editOne(int id, Character character) {
         for (Character oldCharacter : Characters.list) {
-            if (oldCharacter.getId().equals(character.getId())) {
+            if (oldCharacter.getId().equals(id)) {
                 Characters.list.set(Characters.list.indexOf(oldCharacter), character);
                 return true;
             }

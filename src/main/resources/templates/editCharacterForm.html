@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/characters">
+<a th:href="@{/characters/{id}(id=${character.getId()})}">
     <button>Back</button>
 </a>
-<form th:object="${character}" method="post">
+<form th:object="${character}" th:method="PUT">
     <div>
         <label for="id">Id</label>
         <input type="text" th:field="*{id}" id="id"/>
