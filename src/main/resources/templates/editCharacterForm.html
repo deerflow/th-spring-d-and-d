@@ -14,11 +14,13 @@
         <input type="text" th:field="*{id}" id="id"/>
     </div>
 
+    <p th:if="${#fields.hasErrors('name')}">Invalid name</p>
     <div>
         <label for="name">Name</label>
         <input type="text" th:field="*{name}" id="name"/>
     </div>
 
+    <p th:if="${#fields.hasErrors('type')}">Type must be Warrior or Mage</p>
     <div>
         <label for="type">Type</label>
         <select id="type" th:field="*{type}">
@@ -27,6 +29,7 @@
         </select>
     </div>
 
+    <p th:if="${#fields.hasErrors('lifePoints')}">Life points must be a positive integer</p>
     <div>
         <label for="life_points">Life points</label>
         <input type="number" th:field="*{lifePoints}" id="life_points"/>
